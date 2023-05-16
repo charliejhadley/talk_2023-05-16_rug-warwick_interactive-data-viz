@@ -1,0 +1,85 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Allows us to combine text, code, images and output - it's a literate programming environment.
+
+```{r}
+library(tidyverse)
+library(fivethirtyeight)
+library(highcharter)
+```
+
+```{r}
+bechdel %>% 
+  count(year, clean_test) %>% 
+  ggplot() +
+  aes(x = n,
+      y = year,
+      group = clean_test,
+      color = clean_test) +
+  geom_line()
+```
+
+
+
+```{r}
+gss_cat %>% 
+  count(partyid, marital) %>% 
+  ggplot() +
+  aes(x = n,
+      y = partyid,
+      fill = marital) +
+  geom_col()
+```
+
+```{r}
+gss_cat %>% 
+  count(partyid, marital) %>% 
+  hchart(
+    type = "bar",
+    hcaes(
+      x = partyid,
+      y = n,
+      group = marital
+    )
+  ) %>% 
+  hc_plotOptions(stacking = "stack")
+```
+
+```{r}
+library(rnaturalearthdata)
+library(leaflet)
+library(sf)
+
+
+countries_sf <- countries110 %>% 
+  st_as_sf()
+
+pal_continent <- colorFactor("Set3", countries_sf$continent)
+
+countries_sf %>% 
+  leaflet() %>% 
+  addPolygons(label = ~name,
+              popup = ~paste(name,
+                             "<br>",
+                             pop_est),
+              fillColor = ~pal_continent(continent),
+              fillOpacity = 1,
+              weight = 1,
+              color = "white") %>% 
+  addLegend(pal = pal_continent,
+            value = ~continent,
+            opacity = 1)
+
+```
+
+
+
+
+
+
