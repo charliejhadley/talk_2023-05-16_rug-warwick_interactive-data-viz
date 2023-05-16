@@ -1,5 +1,5 @@
 ---
-title: "RUG Oxford Feb 2023: Interactive data visualisation in R Shiny with {htmlwidgets}"
+title: "RUG Warwick 2023-05-16: Interactive data visualisation in R Shiny with {htmlwidgets}"
 output: github_document
 ---
 
@@ -7,7 +7,7 @@ This repo contains materials for Charlie Hadley's talk on interactive data visua
 
 - This readme file provides more information on what I showed in my slides
 
-- The slide deck is unfortunately quite Frankensteinian. A [live copy lives on Google Slides](https://docs.google.com/presentation/d/1GfHvrDHkdUKmlECsPvagT2HXBF7RoIMz3Kq1NXR4BEk/edit?usp=sharing) or you can download the PDF from this repo.
+- The slide deck is unfortunately quite Frankensteinian. A [live copy lives on Google Slides](https://docs.google.com/presentation/d/13_LhfTMLHnKDNPMBm9AAVi3c1aMlnqL02Jt6w29iMts/edit?usp=sharing) or you can download the PDF from this repo.
 
 - During the talk I wrote some live code - that can also be found in this repo.
 
