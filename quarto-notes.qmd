@@ -1,0 +1,32 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(plotly)
+library(fivethirtyeight)
+```
+
+```{r}
+gg_bechdel <- bechdel %>% 
+  count(clean_test) %>% 
+  ggplot() +
+  aes(x = n,
+      y = clean_test) +
+  geom_col()
+```
+
+```{r}
+gg_bechdel %>% 
+  ggplotly()
+```
+
+```{r}
+bechdel %>% 
+  count(clean_test) %>% 
+  plot_ly(x = ~n,
+          y = ~clean_test)
+```
